@@ -40,6 +40,8 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
     private AuthenticationManager authenticationManager;
     @Autowired
     private RedisConnectionFactory connectionFactory;
+    @Autowired
+    private DomainUserDetailsService userDetailsService;
 
 
     @Bean

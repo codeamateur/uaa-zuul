@@ -4,7 +4,8 @@ spring:
   application:
     name: order-service
   redis:
-    host: 192.168.1.140
+     host: 127.0.0.1
+     port: 6379
 #  cloud:
 #    config:
 #      uri: http://${config.host:192.168.1.140}:${config.port:8888}

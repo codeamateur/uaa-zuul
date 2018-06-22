@@ -29,12 +29,8 @@ import javax.servlet.http.HttpServletResponse;
 @Configuration
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-
-
-    @Bean
-    public UserDetailsService userDetailsService(){
-        return new DomainUserDetailsService();
-    }
+    @Autowired
+    private DomainUserDetailsService userDetailsService;
 
     @Bean
     public PasswordEncoder passwordEncoder() {
@@ -44,7 +40,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth
-                .userDetailsService(userDetailsService())
+                .userDetailsService(userDetailsService)
                 .passwordEncoder(passwordEncoder());
     }
 
